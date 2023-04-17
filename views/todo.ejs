@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Todo List</title>
+        <link rel="stylesheet" href="/public/css/styles.css">
+        <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+
+        
+        
+         
+        
+    </head>
+
+    <body>
+
+        
+        <h1> My todo list</h1>
+        <div id="todo-table">
+            <form action="/add/todo" method="POST">
+                <input type="text" name="item" placeholder="Add new item.." required />
+                <button type="Submit">Add Item</button>
+
+            </form>
+            <ul>
+                <% todo.forEach(todo => { %>
+                   <div class="line">
+                   <li><%= todo.item %></li>
+                   <a href="/delete/todo/<%= todo._id %>">Delete</a>
+                   </div> 
+                  
+                <% }) %>
+              </ul>
+            
+
+        </div>
+       
+    </body>
+
+</html>
