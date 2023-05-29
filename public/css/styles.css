@@ -60,6 +60,16 @@ li{
     
 }
 
+input[type=submit].link {
+    margin: 0;
+    border: 0;
+    background: transparent;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    overflow: visible;
+}
+
 .line{
  display: flex;
  justify-content: space-between;

@@ -6,28 +6,55 @@
 
         
         
-         
+       
         
     </head>
 
     <body>
 
-        
-        <h1> My todo list</h1>
+        <% let id = ID; %>
+           
+        <h1>  <%=name %>'s todo</h1>
+     
+        <form id="foo" method="get" action="/history/<%= ID%>">
+            <input type="hidden" />
+            <input type="submit" value="history" class="link" />
+        </form>
         <div id="todo-table">
-            <form action="/add/todo" method="POST">
+            
+           
+            <script>
+                
+                localStorage.setItem('id', '<%= ID %>');
+                console.log(typeof '<%= ID %>'); // output: string
+
+              </script>
+
+            
+            
+            <form action="/add/todo/<%= ID %>" method="POST">
                 <input type="text" name="item" placeholder="Add new item.." required />
                 <button type="Submit">Add Item</button>
 
             </form>
+           
             <ul>
                 <% todo.forEach(todo => { %>
-                   <div class="line">
-                   <li><%= todo.item %></li>
-                   <a href="/delete/todo/<%= todo._id %>">Delete</a>
-                   </div> 
-                  
-                <% }) %>
+                    <div class="line">
+                    <li><%=todo[0].item %> </li>
+                    <li><%=todo[1] %> </li>
+                    <form action="/delete/todo/<%= ID %>/<%= todo[0].item %>" method="GET">
+                        <button type="submit">Delete</button>
+                    </form>
+                    <form action="/mail/todo/<%= ID %>/<%=todo[0].item%>" method="POST">
+                        <button type="submit">Set Reminder</button>
+                        <input type="datetime-local" id="reminder" name="reminder" placeholder="4/29/2023 12:00:00 PM">
+                    </form>
+                 
+                    </div>
+
+              <%  });%>
+              
               </ul>
             
 

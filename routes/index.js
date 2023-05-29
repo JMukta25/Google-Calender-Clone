@@ -1,12 +1,21 @@
 const router=require("express").Router()
 var Todo=require("../models/Todo")
-//routes will be here
+var Todo1=require("../models/User")
+const axios = require('axios');
+// routes will be here
 
-router.get("/", async(req,res)=>{
- const allTodo= await Todo.find();
+router.get("/home", async(req,res)=>{
+ const allTodo= await Todo.findOne({email:req.body.email});
+ console.log("This is todo list");
+ 
 
- res.render('todo',{todo:allTodo})
+})
 
+router.get("/", (req,res)=>{
+
+
+ res.render('register')
+ 
 })
 
 module.exports=router;
