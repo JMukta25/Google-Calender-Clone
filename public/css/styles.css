@@ -1,10 +1,23 @@
-body{
+
+.todoBody{
     background: #0d1521;
     font-family: tahoma;
     color: #989898;
-}
 
-#todo-table{
+}
+.container {
+    display: flex;
+    flex-direction: column;
+  }
+  .User-name{
+    order: 1;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+  }
+
+ #todo-table{
+    order: 2;
     position: relative;
     width: 95%;
     background: #090d13;
@@ -20,7 +33,7 @@ body{
     clear: both;
 }
 
-input[type="text"]{
+.todoInput[type="text"]{
     width: 70%;
     padding: 20px;
     background:#181c22;
@@ -29,8 +42,34 @@ input[type="text"]{
     font-size: 20px;
     color: #989898;
 }
-
-button{
+.reminder-form {
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+    
+}
+.delete{
+   
+}
+.reminder-form .delremButton {
+    margin-right: 10px;
+}
+.reminder-form input[type="datetime-local"] {
+    width: 150px; /* Adjust the width to your preference */
+}
+.delremButton{
+    margin-top:5%;
+    padding: 20px;
+    background: #23282e;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    border: 0;
+    box-sizing: border-box;
+    margin-right: 7px; /* Adjust this value to create space between buttons */
+    float: left;
+}
+.todoButton{
     padding: 20px;
     width: 30%;
     float: left;
@@ -59,18 +98,29 @@ li{
 
     
 }
-
-input[type=submit].link {
-    margin: 0;
+.Uname{
+    margin-top:2%;
+   margin-left: 45%;
+   margin-bottom: 3%;
+}
+#foo{
+  
+    margin-top: 12%;
+    margin-bottom: 2%;
+    margin-right:250px;
+}
+.todoLink {
+    
     border: 0;
     background: transparent;
-    color: blue;
+    color:#989898;
     text-decoration: underline;
     cursor: pointer;
     overflow: visible;
+    font-size: medium;
 }
 
-.line{
+ .line{
  display: flex;
  justify-content: space-between;
  margin-right:13%;
@@ -78,8 +128,118 @@ input[type=submit].link {
 }
 
 h1{
-    margin-top:2%;
+    margin-top:1%;
     color: #989898 ;
     text-align: center;
    
+} 
+
+/******************************************LOGIN***************************************************/
+
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins',sans-serif;
 }
+.authBody{
+  display: flex;
+  height: 100vh;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background: #151515;
+}
+.login-form{
+  position: relative;
+  width: 370px;
+  height: auto;
+  background: #1b1b1b;
+  padding: 40px 35px 60px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: inset 0 0 1px #272727;
+}
+.text{
+  font-size: 30px;
+  color: #c7c7c7;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.authForm{
+  margin-top: 40px;
+}
+.authForm .field{
+  margin-top: 20px;
+  display: flex;
+}
+.fas{
+  height: 50px;
+  width: 60px;
+  color: #868686;
+  font-size: 20px;
+  line-height: 50px;
+  border: 1px solid #444;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+  background: linear-gradient(#333,#222);
+}
+.field input,.authForm button{
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 19px;
+  color: #868686;
+  padding: 0 15px;
+  border-radius: 0 5px 5px 0;
+  border: 1px solid #444;
+  caret-color: #339933;
+  background: linear-gradient(#333,#222);
+}
+input:focus{
+  color: #339933;
+  box-shadow: 0 0 5px rgba(0,255,0,.2),
+              inset 0 0 5px rgba(0,255,0,.1);
+  background: linear-gradient(#333933,#222922);
+  animation: glow .8s ease-out infinite alternate;
+}
+@keyframes glow {
+   0%{
+    border-color: #339933;
+    box-shadow: 0 0 5px rgba(0,255,0,.2),
+                inset 0 0 5px rgba(0,0,0,.1);
+  }
+   100%{
+    border-color: #6f6;
+    box-shadow: 0 0 20px rgba(0,255,0,.6),
+                inset 0 0 10px rgba(0,255,0,.4);
+  }
+}
+.authButton{
+  margin-top: 30px;
+  border-radius: 5px!important;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.authButton:hover{
+  color: #339933;
+  border: 1px solid #339933;
+  box-shadow: 0 0 5px rgba(0,255,0,.3),
+              0 0 10px rgba(0,255,0,.2),
+              0 0 15px rgba(0,255,0,.1),
+              0 2px 0 black;
+}
+.link{
+  margin-top: 25px;
+  color: #868686;
+}
+.link a{
+  color: #339933;
+  text-decoration: none;
+}
+.link a:hover{
+  text-decoration: underline;
+}
+/****************************************LOGIN form end******************************/
